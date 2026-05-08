@@ -153,3 +153,64 @@
     </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 Fragments // Tommy</title>
+    <style>
+        :root { --accent: #ff0044; --glass: rgba(255, 255, 255, 0.05); --text: #ffffff; }
+        body { background-color: #050505; margin: 0; font-family: 'Segoe UI', sans-serif; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: var(--text); }
+        .header { text-align: center; z-index: 10; margin-bottom: 20px; }
+        h1 { font-size: 2rem; letter-spacing: 12px; text-transform: uppercase; margin: 0; font-weight: 100; }
+        .subheader { color: var(--accent); font-size: 0.6rem; letter-spacing: 5px; margin-top: 10px; }
+        .bouquet-container { position: relative; width: 100vw; height: 65vh; display: flex; justify-content: center; align-items: center; }
+        .flower { position: absolute; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: all 0.5s ease; }
+        .flower span:first-child { font-size: 3.5rem; filter: saturate(0.5) brightness(0.8); }
+        .flower:hover { transform: scale(1.4) translateY(-10px); z-index: 100; }
+        .flower:hover span:first-child { filter: saturate(1.2) brightness(1.2) drop-shadow(0 0 20px var(--accent)); }
+        .label { font-size: 0.6rem; background: var(--glass); backdrop-filter: blur(8px); color: #fff; padding: 5px 12px; border-radius: 2px; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0; transition: 0.3s; }
+        .flower:hover .label { opacity: 1; border-color: var(--accent); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>TOMMY // 17</h1>
+        <div class="subheader">SYNC RATE: 100% // GARDEN LOADED</div>
+    </div>
+    <div class="bouquet-container" id="bouquet"></div>
+    <script>
+        const gifts = [
+            { icon: '✉️', name: 'The Letter', url: 'letter.webp' },
+            { icon: '🎨', name: 'Our Art', url: 'art.webp' },
+            { icon: '🦋', name: 'Strelitzia', url: 'strelitzia.html' },
+            { icon: '🌻', name: 'The Start', url: 'happy_birthday_tommyy (1).html' },
+            { icon: '📜', name: 'Contract', url: 'gemini-code-1778208951533 (1).html' },
+            { icon: '🗓️', name: '17 Days', url: 'gemini-code-1778208427207 (1).html' },
+            { icon: '🌌', name: 'Sky-Link', url: 'gemini-code-1778208975244 (1).html' },
+            { icon: '📂', name: 'Archive', url: 'gemini-code-1778208978250 (1).html' },
+            { icon: '🎭', name: 'VN Route', url: 'gemini-code-1778208105243 (1).html' },
+            { icon: '📟', name: 'Terminal', url: 'gemini-code-1778209579824.html' },
+            { icon: '📻', name: 'Playlist', url: 'https://open.spotify.com/playlist/7H3NTB7xCGQ0pXaprTp7ub?si=3e-teSSuSvSdENbTXU1vMw' },
+            { icon: '📍', name: 'System Map', url: 'tommy_birthday_site_v2 (1).html' }
+        ];
+
+        const container = document.getElementById('bouquet');
+        gifts.forEach((gift, i) => {
+            const el = document.createElement('a');
+            el.href = gift.url;
+            el.className = 'flower';
+            el.style.animation = `float ${4 + Math.random() * 2}s infinite ease-in-out`;
+            const angle = (i / gifts.length) * 6.28;
+            const dist = 220;
+            el.style.left = `calc(50% + ${Math.cos(angle) * dist}px)`;
+            el.style.top = `calc(50% + ${Math.sin(angle) * dist}px)`;
+            el.innerHTML = `<span>${gift.icon}</span><span class="label">${gift.name}</span>`;
+            container.appendChild(el);
+        });
+    </script>
+</body>
+</html>
