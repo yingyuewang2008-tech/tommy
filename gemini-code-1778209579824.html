@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TERMINAL // END_OF_DAY</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .terminal-box {
+            border: 1px solid #222;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            background: linear-gradient(145deg, #050505, #000);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .log-line {
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .system { color: #555; font-weight: bold; margin-right: 10px; }
+        .notice { color: #888; margin-right: 10px; }
+        .message { color: #fff; line-height: 1.6; margin-top: 20px; border-top: 1px solid #111; padding-top: 20px; }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: #fff;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        .timestamp {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.6em;
+            color: #222;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-box">
+        <div class="timestamp">MAY.08.2026 // 23:59:59</div>
+        
+        <div class="log-line" style="animation-delay: 0.5s;">
+            <span class="system">[SYSTEM]:</span> Tommy.exe has successfully reached Level 17.
+        </div>
+
+        <div class="log-line" style="animation-delay: 1.5s;">
+            <span class="notice">[NOTICE]:</span> Life-cycle parameters updated. Connection verified.
+        </div>
+
+        <div class="log-line message" style="animation-delay: 3s;">
+            <span class="system">[MESSAGE FROM MEI]:</span> 
+            The sky is beautiful today, isn't it? <br><br>
+            Thank you for being born, Tommy. I love you.<span class="cursor"></span>
+        </div>
+    </div>
+
+</body>
+</html>

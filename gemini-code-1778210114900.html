@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INVENTORY // STRELITZIA_SCAN</title>
+    <style>
+        body {
+            background-color: #050505;
+            /* Using your uploaded scenery for the background */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('pexels-suju-17289904.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Franxx UI Container */
+        .franxx-frame {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            width: 380px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(255, 0, 68, 0.3);
+            clip-path: polygon(0 5%, 5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%);
+        }
+
+        /* Red UI Accents */
+        .accent {
+            position: absolute;
+            background: #ff0044;
+            height: 3px;
+            width: 60px;
+        }
+        .top-left { top: 0; left: 20%; }
+        .bottom-right { bottom: 0; right: 20%; }
+
+        .flower-container {
+            text-align: center;
+            position: relative;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 0, 68, 0.4);
+            background: #000;
+            overflow: hidden;
+        }
+
+        .flower-img {
+            width: 100%;
+            display: block;
+            filter: saturate(1.3) contrast(1.1);
+            animation: sync-pulse 5s ease-in-out infinite;
+        }
+
+        @keyframes sync-pulse {
+            0%, 100% { opacity: 0.85; filter: brightness(0.8); }
+            50% { opacity: 1; filter: brightness(1.1); }
+        }
+
+        .status-header {
+            font-size: 0.6em;
+            letter-spacing: 5px;
+            color: #ff0044;
+            margin-bottom: 20px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .item-name {
+            font-size: 1.8em;
+            letter-spacing: 10px;
+            margin: 15px 0;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 0, 68, 0.5);
+        }
+
+        .meaning {
+            border-left: 2px solid #ff0044;
+            padding-left: 15px;
+            font-size: 0.85em;
+            line-height: 1.8;
+            color: #ccc;
+            text-align: left;
+            margin-top: 25px;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        .sync-rate {
+            margin-top: 25px;
+            font-size: 0.75em;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            letter-spacing: 2px;
+        }
+
+        .mei-signature {
+            position: absolute;
+            bottom: 12px;
+            right: 40px;
+            font-size: 0.55em;
+            color: #444;
+            letter-spacing: 3px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="franxx-frame">
+        <div class="accent top-left"></div>
+        <div class="accent bottom-right"></div>
+
+        <div class="status-header">Pistil: MEI // Stamen: TOMMY</div>
+
+        <div class="flower-container">
+            <img src="360_F_32790112_SOvlKOK5XbNDbRuosy4JgOwaWp3V5U7N.jpg" class="flower-img" alt="Strelitzia Scan">
+        </div>
+
+        <div class="item-name">Strelitzia</div>
+
+        <div class="meaning">
+            "The Jian is a bird that only has one wing. Unless a pair support each other, they cannot fly. Imperfect on our own... but whole together. We will never drift apart, Tommy."
+        </div>
+
+        <div class="sync-rate">
+            <span>SYNC RATE: 100%</span>
+            <span>LEVEL: 17</span>
+        </div>
+
+        <div class="mei-signature">AUTHENTICATED BY MEI</div>
+    </div>
+
+</body>
+</html>
